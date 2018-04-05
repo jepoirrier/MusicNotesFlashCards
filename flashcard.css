@@ -1,0 +1,57 @@
+﻿* {
+    box-sizing: border-box;
+}
+
+body {
+	background-color: #ffffff;
+	//width: 98%;
+}
+
+/*fieldset {
+	//height: 50%;
+	//width: 80%;
+	background: #ffffff;
+	margin: auto;
+	//padding: 16px;
+	//text-align: center;
+}*/
+
+.column {
+    float: left;
+    width: 33.33%;
+    //padding: 10%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+
+div.divSettings {
+	position: relative;
+}
+
+div.divScoreboard {
+	position: relative;
+}
+
+div.divCurrentCard {
+	position: relative;
+}
+
+div.divAnswer {
+	position: relative;
+}
+
+div.divPreviousAnswer {
+	position: relative;
+}

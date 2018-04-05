@@ -1,0 +1,101 @@
+﻿<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" type="text/css" href="flashcard.css">
+		<script src="musicflashcards.js"></script> 
+		<title>Music notes flash cards</title>
+		<script type="text/javascript">
+			window.onload = initialSetup();
+		</script>
+	</head>
+<body>
+
+	<h1>Music notes flash cards</h1>
+
+	<div class="row">
+
+		<div class="column">
+			<div class="divSettings">
+				<fieldset id="settings">
+					<legend>Settings</legend>
+					<p>Type of notation to use:</p>
+					<div>
+						<input type="radio" name="noteType" value="notationA" id="notationA" onClick="displayButtonsA();" checked />
+						<label for="notationA">A, B, C, ...</label>
+					</div>
+					<div>
+						<input type="radio" name="noteType" value="notationDo" onClick="displayButtonsDo()" />
+						<label for="notationDo">do, r&eacute;, mi, ...</label>
+					</div>
+					<p>Score:</p>
+					<div>
+						<input type="checkbox" name="scoreTrack" value="displayScoreboard" onClick="displayScoreboard()" checked />
+						<label for="displayScoreboard">Keep track of points</label>
+					</div>
+				</fieldset>
+			</div>
+
+			<div class="divScoreboard">
+				<fieldset id="scoreboard">
+					<!-- <div id="scoreboard">-->
+					<legend>Score</legend>
+					<p><span id="currentScore">0</span> / <span id="currentMaximum">0</span></p>
+					<p><button value="reset" onclick="javascript:resetHighScore();">Reset</button></p>
+					<!-- </div>-->
+				</fieldset>
+			</div>
+		</div>
+
+		<div class="column">
+
+			<!-- No time tracking for the moment -->
+
+			<div id="divCurrentCard">
+				<fieldset id="currentCard">
+					<legend>Current card</legend>
+					<img src="notes/note20.png" id="imageCurrentCard" />
+				</fieldset>
+			</div>
+
+			<div id="divAnswer">
+				<fieldset id="answer">
+					<legend>Your answer</legend>
+					<div id="buttonsA">
+						<button value="A" onclick="javascript:giveAnswer(6)">A</button>  
+						<button value="B" onclick="javascript:giveAnswer(7)">B</button> 
+						<button value="C" onclick="javascript:giveAnswer(1)">C</button> 
+						<button value="D" onclick="javascript:giveAnswer(2)">D</button>
+						<button value="E" onclick="javascript:giveAnswer(3)">E</button> 
+						<button value="F" onclick="javascript:giveAnswer(4)">F</button> 
+						<button value="G" onclick="javascript:giveAnswer(5)">G</button>
+					</div>
+					<div id="buttonsDo">
+						<button value="do" onclick="javascript:giveAnswer(1)">do</button>  
+						<button value="re" onclick="javascript:giveAnswer(2)">r&eacute;</button> 
+						<button value="mi" onclick="javascript:giveAnswer(3)">mi</button> 
+						<button value="fa" onclick="javascript:giveAnswer(4)">fa</button>
+						<button value="sol" onclick="javascript:giveAnswer(5)">sol</button> 
+						<button value="la" onclick="javascript:giveAnswer(6)">la</button> 
+						<button value="si" onclick="javascript:giveAnswer(7)">si</button>
+					</div>
+				</fieldset>
+			</div>
+		</div>
+
+		<div class="column">
+			<div id="divPreviousAnswer">
+				<fieldset id="previousAnswer">
+					<legend>Previous card</legend>
+					<img src="notes/note10.png" id="imagePreviousCard" />
+					<p>Your answer was <span id="previousAnswerText1">...</span> and it was <span id="previousAnswerText2"></span> correct!</p>
+				</fieldset>
+			</div>
+		</div>
+
+	</div> <!-- end of row -->
+
+	<hr />
+	<p>&copy; Jean-Etienne Poirrier, 2018 - GPL v3 or later - <a href="https://github.com/jepoirrier/MusicNotesFlashCards"/>source code</a>.</p>
+
+	</body>
+</html>
